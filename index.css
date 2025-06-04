@@ -1,0 +1,297 @@
+@font-face {
+  font-family: "openSans";
+  src: url("./OpenSans.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body,
+.root,
+.wrapper {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.form_group {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.form-control {
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #e5e6e7;
+  border-radius: 1px;
+  color: inherit;
+  display: block;
+  padding: 12px 12px;
+  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  width: 100%;
+  font-size: 14px;
+  font-family: "openSans", sans-serif;
+}
+
+.form-control:focus {
+  border: 2px solid #70b65c;
+  outline: none;
+}
+
+.form_block {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.btn,
+.form_group a {
+  font-family: "openSans", sans-serif;
+  border-radius: 3px;
+  background-color: #70b65c;
+  border-color: #70b65c;
+  color: #fff;
+  width: 100% !important;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 2;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.form_group input {
+  width: 90% !important;
+}
+.form_group {
+  margin: 20px auto;
+}
+.form_group a {
+  margin-top: 30px;
+  width: 80% !important;
+}
+
+/* Обёртка для кастомного чекбокса */
+.checkbox-container {
+  display: inline-block;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #333;
+}
+
+/* Скрываем настоящий чекбокс */
+.checkbox-container input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Квадрат для галочки */
+.checkbox-container .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+/* Состояние hover */
+.checkbox-container:hover .checkmark {
+  border-color: #888;
+}
+
+/* Состояние Checked: меняем фон и рамку */
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Галочка внутри (скрыта по-умолчанию) */
+.checkbox-container .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* При Checked показываем галочку */
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Позиционирование и форма галочки */
+.checkbox-container .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* === Шапка сайта === */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Логотип или название в левом блоке */
+.site-header .logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+/* Правый блок с ссылками */
+.site-header .header-right {
+  display: flex;
+  gap: 15px; /* расстояние между ссылками */
+}
+
+/* Стиль ссылок */
+.site-header .header-link {
+  position: relative;
+  padding: 6px 8px;
+  font-size: 0.95rem;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+/* Ховер-эффект на текст */
+.site-header .header-link:hover {
+  color: #007bff;
+}
+
+/* Подчеркивание при ховере */
+.site-header .header-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #007bff;
+  transition: width 0.2s;
+}
+
+.site-header .header-link:hover::after {
+  width: 100%;
+}
+
+.footer {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-color: #8a86862a;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.footer p {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  font-size: 0.9rem;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  max-width: 300px;
+}
+
+/* Контейнер вокруг истории — делаем прокрутку по горизонтали, если экран узкий */
+.login-history-container {
+  width: 100%;
+  margin: 20px 0;
+  overflow-x: auto;
+}
+
+/* Самая таблица */
+.login-history {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  color: #333;
+}
+
+/* Заголовок таблицы */
+.login-history th {
+  background-color: #e6e6e6;
+  color: #111;
+  font-weight: 600;
+  text-align: left;
+  padding: 12px;
+  border: 1px solid #ccc;
+}
+
+/* Ячейки данных */
+.login-history td {
+  padding: 12px;
+  border: 1px solid #ccc;
+}
+
+/* Чередование фона строк */
+.login-history tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* Подсветка при наведении для удобства чтения */
+.login-history tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Если нужно, чтобы заголовок «История…» и таблица были в одной колонке */
+.login-history-container h2 {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+  color: #222;
+  font-weight: 500;
+}
