@@ -1,0 +1,1 @@
+<script src="./idle.js"></script>
